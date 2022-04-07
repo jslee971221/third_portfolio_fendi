@@ -1,0 +1,132 @@
+@font-face {
+    font-family: 'gowun';
+    src: url('./fonts/Gowun_Batang/GowunBatang-Regular.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'gowun-bold';
+    src: url('./fonts/Gowun_Batang/GowunBatang-Bold.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'gowun-bold';
+    src: url('./fonts/Gowun_Batang/GowunBatang-Bold.ttf') format('truetype');
+}
+
+
+body{
+    font-family: 'gowun';
+}
+.btn, .li, i{
+    cursor: pointer;
+}
+nav h4{
+    cursor: pointer;
+}
+.hdrWrap{
+    background-color: #000;
+}
+.hdrWrap header{
+    width: 80%;
+    max-width: 1080px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    color: #fff;
+    line-height: 80px;
+}
+
+.hdrWrap h1{
+    width: calc(100% / 12 * 2.2);
+    height: 80px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-image: url('../images/main/hdr_logo.png');
+}
+.hdrWrap nav{
+    width: calc(100% / 12 * 5);
+    display: flex;
+    justify-content: space-between;
+    font-size: 20px;
+}
+
+.mainWrap{}
+.main{
+    width: 80%;
+    max-width: 1080px;
+    margin: 0 auto;
+    display: flex;
+}
+.mainWrap .left{
+    width: calc(100% / 12 * 7 - 20px);
+    position: relative;
+}
+.left .btn{
+    position: absolute;
+    line-height: 40px;
+    left: 0px;
+    bottom: 40px;
+    font-size: 20px;
+    font-family: 'gowun-bold';
+}
+.left .logo{
+    position: absolute;
+    width: 70%;
+    height: 120px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-image: url('../images/main/logo.png');
+    top: 40px;
+    left: calc((100vw - 1080px) / -2 + 20px);
+}
+.left .ovrGrid{
+    width: calc(100% + (100vw - 1080px) / 2);
+    margin-left: calc((100vw - 1080px) / -2);
+    
+}
+.left .ovrGrid .bgImg{
+    height: 680px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: url('../images/main/main_01.PNG');
+}
+.mainWrap .right{
+    width: calc(100% / 12 * 5 + 20px);
+    position: relative;
+}
+.right .ovrGrid{
+    width: calc(100% + (100vw - 1080px) / 2);
+}
+.right .ovrGrid .bgImg{
+    height: 680px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: url('../images/main/main_02.PNG');
+}
+.right .btn{
+    position: absolute;
+    line-height: 40px;
+    right: 0px;
+    bottom: 40px;
+    font-size: 20px;
+    font-family: 'gowun-bold';
+}
+
+.cntWrap{
+    margin-top: 80px;
+}
+.content{
+    width: 80%;
+    max-width: 1080px;
+    margin: 0 auto;
+}
+
+.cnt01 section{
+    width: 150%;
+    margin-left: -25%;
+}
+.cnt01 .artGroup{
+    width: 500%;
+}
