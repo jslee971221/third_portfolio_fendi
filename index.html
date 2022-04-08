@@ -11,18 +11,25 @@
     <link rel="stylesheet" href="./css/index_tablet.css" media="(max-width:1024px) and (min-width:0px)">
     <link rel="stylesheet" href="./css/index_mobile.css" media="(max-width:420px) and (min-width:0px)">
     <script src="./js/jquery-3.6.0.min.js"></script>
+    <script src="./js/index.js"></script>
     
 </head>
 <body>
     <div class="hdrWrap">
         <header>
-            <h1></h1>
+            <a href="./index.html"><h1>logo</h1></a>
             <nav>
-                <h4>WOMAN</h4>
-                <h4>MAN</h4>
-                <h4>KIDS</h4>
+                <a href="/sub1.html"><h4>WOMAN</h4></a>
+                <a href="/sub2.html"><h4>MAN</h4></a>
+                <a href="/sub3.html"><h4>KIDS</h4></a>
                 <h4><i class="xi-bars"></i></h4>
             </nav>
+            <div class="bar">
+                <i class="xi-heart"></i>
+                <i class="xi-search"></i>
+                <i class="xi-user"></i>
+                <i class="xi-cart"></i>
+            </div>
         </header>
     </div>
 
@@ -33,17 +40,17 @@
                 <div class="btn">
                     <span>보러가기</span><i class="xi-long-arrow-right"></i>
                 </div>
-                <div class="ovrGrid">
+                <div class="bgImg i1">
                     
-                    <div class="bgImg"></div>
+                    <div class="ovrGrid"></div>
                 </div>
             </div>
             <div class="right">
                 <div class="btn">
                     <span>보러가기</span><i class="xi-long-arrow-right"></i>
                 </div>
-                <div class="ovrGrid">
-                    <div class="bgImg"></div>
+                <div class="bgImg i2">
+                    <div class="ovrGrid"></div>
                 </div>
             </div>
         </div>
@@ -103,7 +110,7 @@
                     </article>
                 </div>
                 <ul class="paging">
-                    <li></li>
+                    <li class="show"></li>
                     <li></li>
                     <li></li>
                     <li></li>
@@ -114,14 +121,14 @@
     </div>
 
     <div class="cntWrap">
-        <div class="content cnt01">
+        <div class="content cnt02">
             <header>
                 <h2>펜디 퍼스트</h2>
             </header>
             <section>
                 <article>
-                    <div class="ovrGrid">
-                        <div class="image i1"></div>
+                    <div class="image i1">
+                        <div class="ovrGrid"></div>
                     </div>
                     <div class="texts">
                         <h3>레인보우 스트라이프</h3>
@@ -129,8 +136,8 @@
                     </div>
                 </article>
                 <article>
-                    <div class="ovrGrid">
-                        <div class="image i2"></div>
+                    <div class="image i2">
+                        <div class="ovrGrid"></div>
                     </div>
                     <div class="texts">
                         <h3>메탈 가죽</h3>
@@ -141,11 +148,11 @@
                     </div>
                 </article>
                 <article>
-                    <div class="ovrGrid">
-                        <div class="image i3"></div>
+                    <div class="image i3">
+                        <div class="ovrGrid"></div>
                     </div>
                     <div class="texts">
-                        <h3>파스텔 톤으로 선보이는 완벽한 아름다움</h3>
+                        <h3>파스텔 톤으로 선보이는<br> 완벽한 아름다움</h3>
                         <p>잔잔한 라이트 블루 컬러를 통해
                             나파 가죽 백의 매끄러운 촉감을
                             한층 더 강조하며,
@@ -163,21 +170,28 @@
                 <h2>선물 아이디어</h2>
             </header>
             <section>
-                <div class="article">
-                    <div class="image i1"></div>
+                <div class="artLeft">
+                    <article>
+                        <div class="image i1">
+                            <div class="ovrGrid"></div>
+                        </div>
+                    </article>
                 </div>
-                <div class="article">
-                    <div class="image i2"></div>
-                </div>
-                <div class="article">
-                    <div class="image i3"></div>
-                </div>
-                <div class="article">
-                    <div class="image i4"></div>
-                </div>
-                <div class="article">
-                    <div class="image i5"></div>
-                </div>
+                <div class="artRight">
+                    <article>
+                        <div class="image i2"></div>
+                    </article>
+                    <article>
+                        <div class="image i3"></div>
+                    </article>
+                    <article>
+                        <div class="image i4"></div>
+                    </article>
+                    <article>
+                        <div class="image i5"></div>
+                    </article>
+                   
+                </div>           
             </section>
         </div>
     </div>
@@ -190,47 +204,53 @@
             <section>
                 <div class="artView">
                     <div class="artGroup">
-                        <article>
-                            <div class="image i1"></div>
-                        </article>
-                        <article>
-                            <div class="image i2"></div>
-                        </article>
-                        <article>
-                            <div class="image i3"></div>
-                        </article>
-                        <article>
-                            <div class="image i4"></div>
-                        </article>
+                        <div class="artFamily">
+                            <article>
+                                <div class="image i1"></div>
+                            </article>
+                            <article>
+                                <div class="image i2"></div>
+                            </article>
+                            <article>
+                                <div class="image i3"></div>
+                            </article>
+                            <article>
+                                <div class="image i4"></div>
+                            </article>
+                        </div>
+                        <div class="artFamily">
+                            <article>
+                                <div class="image i5"></div>
+                            </article>
+                            <article>
+                                <div class="image i6"></div>
+                            </article>
+                            <article>
+                                <div class="image i7"></div>
+                            </article>
+                            <article>
+                                <div class="image i8"></div>
+                            </article>
+                        </div>
+                        <div class="artFamily">
+                            <article>
+                                <div class="image i9"></div>
+                            </article>
+                            <article>
+                                <div class="image i10"></div>
+                            </article>
+                            <article>
+                                <div class="image i11"></div>
+                            </article>
+                            <article>
+                                <div class="image i12"></div>
+                            </article>
+                        </div>
                     </div>
-                    <div class="artGroup">
-                        <article>
-                            <div class="image i1"></div>
-                        </article>
-                        <article>
-                            <div class="image i2"></div>
-                        </article>
-                        <article>
-                            <div class="image i3"></div>
-                        </article>
-                        <article>
-                            <div class="image i4"></div>
-                        </article>
-                    </div>
-                    <div class="artGroup">
-                        <article>
-                            <div class="image i1"></div>
-                        </article>
-                        <article>
-                            <div class="image i2"></div>
-                        </article>
-                        <article>
-                            <div class="image i3"></div>
-                        </article>
-                        <article>
-                            <div class="image i4"></div>
-                        </article>
-                    </div>
+                </div>
+                <div class="btns">
+                    <i class="xi-angle-left"></i>
+                    <i class="xi-angle-right"></i>
                 </div>
             </section>
         </div>
@@ -245,7 +265,10 @@
                 <div class="bgImg i4"></div>
                 <div class="bgImg i5"></div>
             </div>
-            <div class="coverImg"></div>
+            <div class="grid">
+                <div class="coverImg"></div>
+            </div>
+            
         </div>
     </div>
 

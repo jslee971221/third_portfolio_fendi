@@ -1,0 +1,95 @@
+.hdrWrap header>a:nth-child(1){
+    margin: 0 auto;
+}
+.hdrWrap header{
+    width: 90%;
+    max-width: 700px;
+}
+.hdrWrap nav{
+    display: none;
+}
+
+.main{
+    width: 90%;
+    max-width: 700px;
+    display: block;
+}
+.mainWrap .left{
+    width: 100vw;
+}
+.cnt01 section{
+    height: 400px;
+}
+.left .bgimg{
+    width: 100%;
+}
+.left .ovrGrid{
+    width: 100%;
+    min-width: 100%;
+    margin-left: min(calc((100vw - 700px) / -2), calc((100vw - 90vw) / -2));
+    background-image: url('../images/main/main_tab.PNG');
+}
+.left .logo{
+    display: none;
+}
+.left .btn{
+    display: none;
+}
+.right{
+    display: none;
+}
+.cnt01 article{
+    width: calc(100% / 10 - 1.6%);
+}
+.content{
+    width: 90%;
+    max-width: 700px;
+}
+.cnt01 article:nth-child(3), .cnt01 article:nth-child(6), .cnt01 article:nth-child(9), .cnt01 article:nth-child(12), .cnt01 article:nth-child(15){
+    display: none;
+}
+.cnt01 article:nth-child(2), .cnt01 article:nth-child(5), .cnt01 article:nth-child(8), .cnt01 article:nth-child(11), .cnt01 article:nth-child(14){
+    margin: 0 1.6%;
+    margin-right: 3.4%;
+}
+.cnt01 .paging{
+    width: 40px;
+    height: 300px;
+    flex-direction: column;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: inherit;
+}
+.cnt01 .paging li{
+    width: 30px;
+    height: 30px;
+}
+.cnt02 article{
+    display: block;
+   
+}
+.cnt02 .image{
+    width: 100%; 
+    direction: ltr;
+}
+.cnt02 .texts{
+    width: 100%;
+}
+.cnt02 .ovrGrid{
+    width: 100vw;
+    min-width: 100vw;
+    margin-left: min(calc((100vw - 700px) / -2), calc((100vw - 90vw) / -2));
+    height: 240px;
+}
+
+.cnt03 section{
+    margin-top: 40px;
+}
+.cnt03 .artLeft .ovrGrid{
+    height: 400px;
+    width: calc((100vw - 700px) / 2 + 100%);
+    min-width: calc((100vw - 90vw) / 2 + 100%);
+    margin-left: min(calc((100vw - 700px) / -2), calc((100vw - 90vw) / -2));
+    
+}
