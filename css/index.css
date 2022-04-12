@@ -11,7 +11,12 @@
     src: url('./fonts/Gowun_Batang/GowunBatang-Bold.ttf') format('truetype');
 }
 
-
+.image, .bgImg, .coverImg, h1, .logo{
+    font-size: 0px;
+    line-height: 0px;
+    text-shadow: none;
+    color: transparent;
+}
 body, html{
     width: 100vw;
     overflow-x: hidden;
@@ -368,8 +373,18 @@ nav h4{
     width: calc(100% / 2 - 20px); 
     height: 280px;
 }
-.cnt03 .artRight article:nth-child(2)~article{
+.cnt03 .artRight .artBtm{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: -360px;
+}
+.cnt03 .artRight .artBtm article{
     margin-top: 80px;
+}
+.cnt03 .artRight .artBtm article:nth-child(1){
+    margin-left: calc(100% / 2 + 20px);
 }
 
 .cnt03 .artRight .image{
@@ -531,7 +546,12 @@ nav h4{
     background-repeat: no-repeat;
     background-image: url('../images/main/bnr_cover.PNG');
 }
-
+.bnr01 h2{
+    display: none;
+}
+.bnr01 .btn{
+    display: none;
+}
 .ftrWrap{
     background-color: #878787;
 }
@@ -560,6 +580,10 @@ footer nav li:nth-child(1){
     line-height: 40px;
     font-size: 18px;
 }
+footer ul li:nth-child(1) i{
+    display: none;
+}
+
 footer .info{
     text-align: right;
     margin-top: -120px;
