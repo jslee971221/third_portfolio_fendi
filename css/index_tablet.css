@@ -1,3 +1,10 @@
+
+html{
+    font-size: 5.1vw;
+}
+body{
+    font-size: 1.3vw;
+}
 .hdrWrap header>a:nth-child(1){
     margin: 0 auto;
 }
@@ -15,17 +22,16 @@
     display: block;
 }
 .mainWrap .left{
-    width: 100vw;
+    width: 100%;
 }
 .cnt01 section{
-    height: 400px;
+    height: min(10rem, 400px);
 }
 .left .bgimg{
     width: 100%;
 }
 .left .ovrGrid{
-    width: 100%;
-    min-width: 100%;
+    width: 100vw;
     margin-left: min(calc((100vw - 700px) / -2), calc((100vw - 90vw) / -2));
     background-image: url('../images/main/main_tab.PNG');
 }
@@ -38,8 +44,19 @@
 .right{
     display: none;
 }
+.cnt01 section{
+    height: min(9rem, 360px);
+    margin-top: min(1rem, 40px);
+}
+.cnt01 .artGroup{
+    width: calc(100% / 8 * 7);
+    height: min(45rem, 1800px);
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
 .cnt01 article{
-    width: calc(100% / 10 - 1.6%);
+    width: calc(100% / 8 * 3 - 10px);
+    height: min(9rem, 360px);
 }
 .content{
     width: 90%;
@@ -49,20 +66,20 @@
     display: none;
 }
 .cnt01 article:nth-child(2), .cnt01 article:nth-child(5), .cnt01 article:nth-child(8), .cnt01 article:nth-child(11), .cnt01 article:nth-child(14){
-    width: calc(100% / 10);
+    width: calc(100% / 8 * 4 - 10px);
     margin: 0 1.6%;
     margin-right: 3.4%;
 }
 .cnt01 .image.i2, .cnt01 .image.i5, .cnt01 .image.i8, .cnt01 .image.i11, .cnt01 .image.i14{
-    height: 360px;
+    height: min(9rem, 360px);
 }
 .cnt01 article .image{
-    height: 280px;
-    margin-top: 80px;
+    height: min(7rem, 280px);
+    margin-top: min(2rem, 80px);
 }
 .cnt01 .paging{
     width: 40px;
-    height: 300px;
+    height: min(7.5rem, 300px);
     flex-direction: column;
     top: 0;
     bottom: 0;
@@ -88,14 +105,14 @@
     width: 100vw;
     min-width: 100vw;
     margin-left: min(calc((100vw - 700px) / -2), calc((100vw - 90vw) / -2));
-    height: 240px;
+    height: min(6rem, 240px);
 }
 
 .cnt03 section{
-    margin-top: 40px;
+    margin-top: min(1rem, 40px);
 }
 .cnt03 .artLeft .ovrGrid{
-    height: 400px;
+    height:  min(10rem, 400px);
     width: calc((100vw - 700px) / 2 + 100%);
     min-width: calc((100vw - 90vw) / 2 + 100%);
     margin-left: min(calc((100vw - 700px) / -2), calc((100vw - 90vw) / -2));
@@ -103,7 +120,7 @@
 .cnt03 .artLeft{
     width: calc(100% / 8 * 5);
     position: relative;
-    height: 400px;
+    height: min(10rem, 400px);
 }
 
 
@@ -113,23 +130,22 @@
     width: calc(100% / 8 * 3);
     display: block;
     position: relative;
-    height: 680px;
+    height: min(17rem, 680px);
 }
 .cnt03 .artRight article{
     width: calc(100% / 3 * 2);
-    height: 240px;
+    height: min(6rem, 240px);
     position: absolute;
-    top: 80px;
+    top: min(2rem, 80px);
     right: 0;
 }
 .cnt03 .artRight .image{
-    height: 240px;
-    position: relative;
+    height: min(6rem, 240px);
 }
 .cnt03 .artRight .artBtm{
     width: 90vw;
     max-width: 700px;
-    height: 240px;
+    height: min(6rem, 240px);
 
     display: flex;
     position: absolute;
@@ -160,7 +176,7 @@
     width: calc(100% / 8 * 6);
 }
 .cnt04 .image{
-    height: 200px;
+    height: min(5rem, 200px);
 }
 .cnt04 .btns{
     width: 100%;
@@ -172,44 +188,46 @@
     display: none;
 }
 .bnr01{
-    height: 520px;
+    height: min(13rem, 520px);
 }
 .bnr01 .grid{
     color: #fff;
     text-align: center;
-    font-size: 18px;
+    max-width: 700px;
+    font-size: min(1.8em, 18px);
 }
 .bnr01 .coverImg{
     width: calc(100% / 8 * 6 + 20px);
 }
 .bnr01 .grid h2{
     display: block;
-    line-height: 80px;
+    line-height: min(2rem, 80px);
 }
 .bnr01 .btn{
     width: 100%;
-    height: 40px;
-    line-height: 40px;
+    height: min(1rem, 40px);
+    line-height: min(1rem, 40px);
     display: block;
     text-align: right;
     position: absolute;
-    bottom: 20px;
+    bottom: min(0.5rem, 20px);
 }
 footer{
-    height: 440px;
+    height: min(11rem, 440px);
     position: relative;
 }
 footer ul{
-    height: 40px;
+    height: min(1rem, 40px);
     overflow: hidden;
 }
 footer ul li{
     border-right: 1px solid pink ;
     text-align: center;
-    padding-right: 20px;
+    padding-right: min(0.5rem, 20px);
 }
 footer ul li:nth-child(1) i{
     display: inline;
+    font-size: min(1.5em, 15px);
 }
 
 
@@ -221,7 +239,7 @@ footer .info{
     margin-top: 0px;
     position: absolute;
     right: 0;
-    bottom: 40px;
+    bottom: min(1rem, 40px);
 }
 footer .info h1{
     width: calc(100% / 8);
