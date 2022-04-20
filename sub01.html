@@ -11,16 +11,17 @@
     <link rel="stylesheet" href="./css/sub01_tablet.min.css" media="(max-width:1024px) and (min-width:0px)">
     <link rel="stylesheet" href="./css/sub01_mobile.min.css" media="(max-width:420px) and (min-width:0px)">
     <script src="./js/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script src="./js/sub01.js"></script>
 </head>
 <body>
     <div class="hdrWrap">
         <header>
-            <a href="./index.html"><h1>fendi</h1></a>
+            <a href="./index.html" class="logo"><h1>fendi</h1></a>
             <nav>
-                <a href="/sub1.html"><h4>WOMAN</h4></a>
-                <a href="/sub2.html"><h4>MAN</h4></a>
-                <a href="/sub3.html"><h4>KIDS</h4></a>
+                <a href="./sub01.html"><h4>WOMAN</h4></a>
+                <a href="./sub02.html"><h4>MAN</h4></a>
+                <a href="./sub03.html"><h4>KIDS</h4></a>
                 <h4><i class="xi-bars"></i></h4>
             </nav>
             <div class="bar">
@@ -61,7 +62,13 @@
                 <div class="menu">
                     <h4><span>상품 상세보기</span><i class="xi-bars"></i></h4>
                     <h4><span>상품 찜하기</span><i class="xi-heart"></i></h4>
-                    <div class="bars"></div>
+                    <div class="bars">
+                        <div class="ovrGrid">
+                            <div class="slide"></div>
+                            <div class="btn"></div>
+                            <div class="shadow"></div>
+                        </div>
+                    </div>
                 </div>
                 <div class="artView">
                     <div class="ovrGrid">
@@ -102,7 +109,13 @@
                 <div class="menu">
                     <h4><span>상품 상세보기</span><i class="xi-bars"></i></h4>
                     <h4><span>상품 찜하기</span><i class="xi-heart"></i></h4>
-                    <div class="bars"></div>
+                    <div class="bars">
+                        <div class="ovrGrid">
+                            <div class="slide"></div>
+                            <div class="btn"></div>
+                            <div class="shadow"></div>
+                        </div>
+                    </div>
                 </div>
             </section>
         </div>
@@ -139,20 +152,12 @@
                         <div class="image i3">신발</div>
                         <div class="texts">
                             <h3>로코코</h3>
-                            <h4>스트레치 페브릭 블랙 가죽 앵클 부츠</h4>
-                            <h4><i class="xi-won"></i> <span>2,000,000</span></h4>
-                        </div>
-                    </article>
-                    <article>
-                        <div class="image i4">신발</div>
-                        <div class="texts">
-                            <h3>로코코</h3>
                             <h4>블랙 PVC 바이커 부츠</h4>
                             <h4><i class="xi-won"></i> <span>1,290,000</span></h4>
                         </div>
                     </article>
                     <article>
-                        <div class="image i5">신발</div>
+                        <div class="image i4">신발</div>
                         <div class="texts">
                             <h3>펜디 오'락</h3>
                             <h4>블랙 가죽 로우힐 부츠</h4>
@@ -160,23 +165,23 @@
                         </div>
                     </article>
                     <article>
-                        <div class="image i6">신발</div>
+                        <div class="image i5">신발</div>
                         <div class="texts">
                             <h3>KARLIGRAPHY</h3>
                             <h4>블랙 가죽 미디엄 힐 부츠</h4>
                             <h4><i class="xi-won"></i> <span>1,600,000</span></h4>
                         </div>
                     </article>
-                    <div class="artView">
-                        <article>
-                            <div class="image i7">신발</div>
-                            <div class="texts">
-                                <h3>로코코</h3>
-                                <h4>스트레치 페브릭 블랙 가죽 앵클 부츠</h4>
-                                <h4><i class="xi-won"></i> <span>2,000,000</span></h4>
-                            </div>
-                        </article>
-                    </div>
+                </div>
+                <div class="artView">
+                    <article>
+                        <div class="image i6">신발</div>
+                        <div class="texts">
+                            <h3>로코코</h3>
+                            <h4>스트레치 페브릭 블랙 가죽 앵클 부츠</h4>
+                            <h4><i class="xi-won"></i> <span>2,000,000</span></h4>
+                        </div>
+                    </article>
                 </div>
             </section>
         </div>
@@ -188,69 +193,72 @@
             </header>
             <section>
                 <div class="artViewTop">
-                    <div class="ovrGrid">
-                        <div class="artGroup">
-                            <article>
-                                <div class="image i1">악세사리</div>
-                            </article>
-                            <article>
-                                <div class="image i2">악세사리</div>
-                            </article>
-                            <article>
-                                <div class="image i3">악세사리</div>
-                            </article>
-                            <article>
-                                <div class="image i4">악세사리</div>
-                            </article>
-                            <article>
-                                <div class="image i5">악세사리</div>
-                            </article>
-                            <article>
-                                <div class="image i6">악세사리</div>
-                            </article>
-                            <article>
-                                <div class="image i7">악세사리</div>
-                            </article>
-                            <article>
-                                <div class="image i8">악세사리</div>
-                            </article>
-                            <article>
-                                <div class="image i9">악세사리</div>
-                            </article>
-                        </div>
+                    <div class="btn">
+                        <i class="xi-angle-left"></i>
                     </div>
+                    <div class="artGroup">
+                        <article>
+                            <div class="image i1">악세사리</div>
+                        </article>
+                        <article>
+                            <div class="image i2">악세사리</div>
+                        </article>
+                        <article>
+                            <div class="image i3">악세사리</div>
+                        </article>
+                        <article>
+                            <div class="image i4">악세사리</div>
+                        </article>
+                        <article>
+                            <div class="image i5">악세사리</div>
+                        </article>
+                        <article>
+                            <div class="image i6">악세사리</div>
+                        </article>
+                        <article>
+                            <div class="image i7">악세사리</div>
+                        </article>
+                        <article>
+                            <div class="image i8">악세사리</div>
+                        </article>
+                        <article>
+                            <div class="image i9">악세사리</div>
+                        </article>
+                    </div>
+                    
                 </div>
                 <div class="artViewBtm">
-                    <div class="ovrGrid">
-                        <div class="artGroup">
-                            <article>
-                                <div class="image i10">악세사리</div>
-                            </article>
-                            <article>
-                                <div class="image i11">악세사리</div>
-                            </article>
-                            <article>
-                                <div class="image i12">악세사리</div>
-                            </article>
-                            <article>
-                                <div class="image i13">악세사리</div>
-                            </article>
-                            <article>
-                                <div class="image i14">악세사리</div>
-                            </article>
-                            <article>
-                                <div class="image i15">악세사리</div>
-                            </article>
-                            <article>
-                                <div class="image i16">악세사리</div>
-                            </article>
-                            <article>
-                                <div class="image i17">악세사리</div>
-                            </article>
-                            <article>
-                                <div class="image i18">악세사리</div>
-                            </article>
-                        </div>
+                    <div class="btn">
+                        <i class="xi-angle-right"></i>
+                    </div>
+                    <div class="artGroup">
+                        <article>
+                            <div class="image i10">악세사리</div>
+                        </article>
+                        <article>
+                            <div class="image i11">악세사리</div>
+                        </article>
+                        <article>
+                            <div class="image i12">악세사리</div>
+                        </article>
+                        <article>
+                            <div class="image i13">악세사리</div>
+                        </article>
+                        <article>
+                            <div class="image i14">악세사리</div>
+                        </article>
+                        <article>
+                            <div class="image i15">악세사리</div>
+                        </article>
+                        <article>
+                            <div class="image i16">악세사리</div>
+                        </article>
+                        <article>
+                            <div class="image i17">악세사리</div>
+                        </article>
+                        <article>
+                            <div class="image i18">악세사리</div>
+                        </article>
                     </div>
                 </div>
             </section>
