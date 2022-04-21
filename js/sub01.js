@@ -3,22 +3,17 @@ $(function(){
     var bars = $('.hdrWrap nav h4').last();
     var menu = $('.hdrWrap .bar')
     var hdrFlag = true;
-
+    var cnt02Btn = $('.cnt02 section .btns i');
+    var cnt02Article = $('.cnt02 article');
+    var cnt02ArtCnt = [];
+    var cnt03Btn = $('.cnt03 .btn');
+    var cnt03ArtGroup = $('.cnt03 .artGroup');
+    var cnt03Ml = 0;
     var ftrBtn = $('footer nav li:nth-child(1)');
     var wd = $(window).width();
-    //함수
-    function infiSlide(j){
-        cnt04artGroup.animate({
-            marginLeft : j + '%'
-        }, 500, function(){
-            if(j == 0){
-                cnt04artGroup.find('.artFamily:last').prependTo(cnt04artGroup);
-            }else{
-                cnt04artGroup.find('.artFamily:first').appendTo(cnt04artGroup);
-            }
-            cnt04artGroup.css({marginLeft: '-100%'}); 
-        });
-    }
+
+    
+    //drag
     $('.cnt01 .btn:first').draggable({
         containment : 'parent',
         drag: function(){
@@ -42,6 +37,80 @@ $(function(){
         }
     });
     
+    //아티클 이동
+    cnt02Btn.first().click(function(j){
+        //article 저장     
+        for(var i = 0; i < cnt02Article.length; i++){
+            cnt02ArtCnt[i] = cnt02Article.eq(i).html();
+        }
+        var j = cnt02Article.length - 1;
+        for(var i = 0; i < cnt02Article.length; i++){
+            cnt02Article.eq(j).html(cnt02ArtCnt[i]);      
+            j++;
+            if(j >= cnt02Article.length - 1){
+            j = 0;
+            }
+        } 
+    });
+    cnt02Btn.last().click(function(j){
+        //article 저장     
+        var j = cnt02Article.length - 1;
+        for(var i = 0; i < cnt02Article.length; i++){
+            cnt02ArtCnt[i] = cnt02Article.eq(i).html();
+        }
+        for(var i = 0; i < cnt02Article.length; i++){
+            cnt02Article.eq(i).html(cnt02ArtCnt[j]);      
+            j++;
+            if(j >= cnt02Article.length - 1){
+            j = 0;
+            }
+        } 
+    });
+    $('.cnt02').on('click', '.artGroup article', function(){
+        var current = $(this).index();
+        var j = cnt02Article.length - 1;
+        for(var i = 0; i < cnt02Article.length; i++){
+            cnt02ArtCnt[i] = cnt02Article.eq(i).html();
+        }
+        for(var i = 0; i < cnt02Article.length; i++){
+            cnt02Article.eq(j).html(cnt02ArtCnt[current]);      
+            j++;
+            current++;
+            if(j >= cnt02Article.length - 1){
+                j = 0;
+            }
+            if(current >= cnt02Article.length){
+                current = 0;
+            }
+        } 
+        
+    });
+
+
+    cnt03ArtGroup.first().css('margin-left', '-20%');
+    cnt03ArtGroup.first().find('article:first').appendTo(cnt03ArtGroup.first());
+    cnt03Btn.first().click(function(){
+        cnt03ArtGroup.first().animate({
+            marginLeft :  -40 + '%'
+        }, 500, function(){
+            cnt03ArtGroup.first().css('margin-left', '-20%');
+            cnt03ArtGroup.first().find('article:first').appendTo(cnt03ArtGroup.first());
+        });
+    });
+
+
+    cnt03ArtGroup.last().css('margin-right', '-20%');
+    cnt03ArtGroup.last().find('article:first').appendTo(cnt03ArtGroup.last());
+    cnt03Btn.last().click(function(){
+        cnt03ArtGroup.last().animate({
+            marginRight : -40 + '%'
+        }, 500, function(){
+            cnt03ArtGroup.last().find('article:first').appendTo(cnt03ArtGroup.last());
+            cnt03ArtGroup.last().css('margin-right', '-20%');
+        });
+    });
+
+
     //PC
     if(wd > 1024){
         //헤더 햄버거

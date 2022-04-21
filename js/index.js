@@ -60,7 +60,7 @@ $(function(){
         cnt01Pbtn.click(function(){
             cnt01Index = $(this).index();
             cnt01artGroup.css({
-                marginTop : cnt01Index * -360 + 'px'
+                marginTop :  'max(' + cnt01Index * -9 + 'rem,' + -360 * cnt01Index+ 'px)'
             });
             cnt01Pbtn.removeClass('show');
             $(this).addClass('show');
