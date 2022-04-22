@@ -6,9 +6,19 @@
     font-family: 'gowun-bold';
     src: url('./fonts/Gowun_Batang/GowunBatang-Bold.ttf') format('truetype');
 }
-@mixin grid{
-    width: 80%;
-    max-width: 1080px;
+@mixin grid($dev){
+    @if($dev == 'tab'){
+        width: 90%;
+        max-width: 700px;
+    }
+    @else if($dev == 'mob'){
+        width: 80%;
+        max-width: 380px;
+    }
+    @else{
+        width: 80%;
+        max-width: 1080px;
+    }
     margin: 0 auto;
 }
 @mixin bgset{
@@ -27,15 +37,46 @@
     color: transparent;
 }
 
+@mixin tab{
+    @media (max-width: 1024px) and (min-width: 0px){
+        @content;
+    }
+}
+@mixin mob{
+    @media (max-width: 420px) and (min-width: 0px){
+        @content;
+    }
+}
+
+
 html{
     font-size: 3vw;
+    @include tab{
+        font-size: 5.1vw;
+    }
+    @include mob{
+        font-size: 9.5vw;
+    }
     overflow-x: hidden;
     body{
         overflow-x: hidden;
         font-family: 'gowun';
         font-size: 0.7vw;
+        position: relative;
+        @include tab{
+            font-size: 1.3vw;
+        }
+        @include mob{
+            font-size: 2.4vw;
+        }
         .hdrWrap header, .main, .content, .banner, footer{
-            @include grid;
+            @include grid('pc');
+            @include tab{
+                @include grid('tab');
+            }
+            @include mob{
+                @include grid('mob');
+            }
             i, .btn, nav h4, .menu h4{
                 cursor: pointer;
             } 
@@ -66,6 +107,12 @@ html{
                 @include bgset;
                 background-size: contain;
                 background-image: url('../images/main/hdr_logo.png');
+                @include tab{
+                    margin: 0 auto;
+                }
+                @include mob{
+                    
+                }
                 h1{
                     opacity: 0;
                 }
@@ -76,9 +123,14 @@ html{
             display: flex;
             justify-content: space-around;
             font-size: #{'min(2em, 20px)'};
+            @include tab{
+                display: none;
+            }
+            @include mob{
+                
+            }
             i{
-                font-size: #{'min(3em, 30px)'};
-                // line-height: #{'min(2rem, 80px)'};
+                font-size: #{'min(3em, 30px)'}; 
             } 
         }
         .bar{
@@ -118,15 +170,42 @@ html{
     .main{
         position: relative;
         height: #{'min(30rem, 1200px)'};
+        @include tab{
+            height: #{'min(13rem, 520px)'};
+            
+        }
+        @include mob{
+            
+        }
         .image{
             &.i1{
                 width: calc(100% / 12 * 8);
                 direction: rtl;
+                @include tab{
+                    width: calc(100vw / 3);
+                    height: #{'min(12rem, 480px)'};
+                    position: relative;
+                    margin-left: auto;
+                }
+                @include mob{
+                    
+                }
                 .ovrGrid{
                     width: calc(100% + (100vw - 1080px) / 2);
                     height: #{'min(17rem, 680px)'};
                     min-width: calc(100% + (100vw - 80vw) / 2);
                     background-image: url('../images/sub01/main_1.jpg');
+                    @include tab{
+                        width: 100%;
+                        min-width: 100%;
+                        height: #{'min(12rem, 480px)'};
+                        position: absolute;
+                        top: 0;
+                        right: #{'min(calc((100vw - 700px) / -2), calc((100vw - 90vw) / -2))'};
+                    }
+                    @include mob{
+                        
+                    }
                 }
             }
             &.i2{
@@ -136,18 +215,46 @@ html{
                 position: absolute;
                 top: #{'min(8rem, 320px)'};
                 right: 0;
+                @include tab{
+                    width: calc(100vw / 3);
+                    height: #{'min(12rem, 480px)'};
+                    top: 0;
+                    left: 0;
+                    margin: auto;
+                }
+                @include mob{
+                    
+                }
             }
             &.i3{
                 width: calc(100% / 12 * 6 - 20px);
                 position: absolute;
                 bottom: 0;
                 left: 0;
+                @include tab{
+                    width: calc(100vw / 3);
+                    top: 0;
+                    bottom: inherit;
+                    left: #{'min(calc((100vw - 700px) / -2), calc((100vw - 90vw) / -2))'};
+                }
+                @include mob{
+                    
+                }
                 .ovrGrid{
                     width: 120%;
                     height: #{'min(10rem, 400px)'};
                     margin-left: -20%;
                     background-image: url('../images/sub01/main_3.jpg');
+                    @include tab{
+                        width: 100%;
+                        height: #{'min(12rem, 480px)'};
+                        margin-left: 0px;
+                    }
+                    @include mob{
+                        
+                    }
                 }
+                
             }
         } 
         .btns{
@@ -159,12 +266,28 @@ html{
             line-height: #{'min(2rem, 80px)'};
             font-size: #{'min(2em, 20px)'};
             font-weight: 700;
+            @include tab{
+                @include flexset;
+                justify-content: space-around;
+                width: 100vw;
+                left: #{'min(calc((100vw - 700px) / -2), calc((100vw - 90vw) / -2))'};
+                right: 0;
+                bottom: #{'max(-0.5rem, -20px)'};
+                line-height: #{'min(1rem, 40px)'};
+                h4{
+                    width: calc(100% / 4 - 20px);
+                }
+            }
+            @include mob{
+                
+            }
         }
     }
 }
 
 .cntWrap{
     margin-top: #{'min(2rem, 80px)'};
+    
     .content{
         header{
             text-align: center;
@@ -185,6 +308,13 @@ html{
                 .ovrGrid{
                     width: calc(100% + (100vw - 1080px) / 2);
                     min-width: calc(100% + (100vw - 80vw) / 2);
+                    @include tab{
+                        width: 100%;
+                        min-width: 100%;
+                    }
+                    @include mob{
+                        
+                    }
                 }
                 .image{
                     @for $i from 1 through 8{
@@ -194,6 +324,12 @@ html{
                     }
                 }
                 .menu{
+                    @include tab{
+                        display: none;
+                    }
+                    @include mob{
+                        
+                    }
                     margin-top: #{'min(2.5rem, 100px)'};
                     h4{
                         line-height: #{'min(2rem, 80px)'};
@@ -256,22 +392,97 @@ html{
                 .artView{
                     &:nth-child(3){
                         direction: rtl;
+                        @include tab{
+                            display: none;
+                        }
+                        @include mob{
+                            
+                        }
                     }
                     width: calc(100% / 12 * 6 - 20px);
+                    @include tab{
+                        width: 100%;
+                    }
+                    @include mob{
+                        
+                    }
                     .ovrGrid{
                         overflow: hidden;
                         .artGroup{
                             width: 200%;
                             @include flexset;
+                            @include tab{
+                                width: 100%;
+                                flex-wrap: wrap;
+                            }
+                            @include mob{
+                                
+                            }
                             article{
                                 width: calc(100% / 4 * 0.9);
-                                .image{
-                                    height: #{'min(12rem, 480px)'};
+                                @include tab{
+                                    @include flexset;
+                                    width: 100%;
+                                    &:nth-child(1), &:nth-child(3){
+                                        flex-direction: row-reverse;
+                                        .texts{
+                                            border-right: 1px solid black;
+                                        }
+                                    }
+                                    &:nth-child(2), &:nth-child(4){
+                                        .texts{
+                                            border-left: 1px solid black;
+                                        }
+                                    }
                                 }
+                                @include mob{
+                                    
+                                }
+                                a{ 
+                                    width: 100%;
+                                    @include tab{
+                                        width: 50%;
+                                        
+                                    }
+                                    @include mob{
+                                        
+                                    }
+                                    .image{
+                                        width: 100%;
+                                        height: #{'min(12rem, 480px)'};
+                                        @include tab{
+                                            width: calc(100% / 4 * 3);
+                                            margin: 0 auto;
+                                            height: #{'min(8rem, 320px)'};
+                                        }
+                                        @include mob{
+                                            
+                                        }
+                                    }
+                                }
+                                
                                 .texts{
                                     display: none;
+                                    @include tab{
+                                        width: 50%;
+                                        text-align: center;
+                                        display: block;
+                                        height: #{'min(8rem, 320px)'};
+                                        a{
+                                            height: #{'min(1.5rem, 60px)'};
+                                        }
+                                        h4{
+                                            line-height: #{'min(1.5rem, 60px)'};
+                                            font-size: #{'min(2em, 20px)'};
+                                            font-family: 'gowun-bold';
+                                        }
+                                        
+                                    }
+                                    @include mob{
+                                        
+                                    }
                                 }
-                            }
+                            }                         
                         }
                     }
                 }
@@ -472,4 +683,25 @@ html{
             }
         }
     }
+}
+
+.heart{
+    width: 50%;
+    height: 50vw;
+    position: fixed;
+    margin: auto;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    text-align: center;
+    color: #fff;
+    opacity: 0;
+    pointer-events: none;
+    i{
+        opacity: 0.8;
+        font-size: #{'min(50em, 500px)'};
+        line-height: 50vw;
+    }
+    
 }

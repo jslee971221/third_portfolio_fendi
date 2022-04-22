@@ -3,16 +3,39 @@ $(function(){
     var bars = $('.hdrWrap nav h4').last();
     var menu = $('.hdrWrap .bar')
     var hdrFlag = true;
+    var mainBtn = $('.main .btns div');
     var cnt02Btn = $('.cnt02 section .btns i');
     var cnt02Article = $('.cnt02 article');
     var cnt02ArtCnt = [];
     var cnt03Btn = $('.cnt03 .btn');
     var cnt03ArtGroup = $('.cnt03 .artGroup');
     var cnt03Ml = 0;
+    var cnt04Btn = $('.cnt04 .btn');
     var ftrBtn = $('footer nav li:nth-child(1)');
     var wd = $(window).width();
+    function screenHeart(){
+        var heart = $('.heart');
+        heart.animate({
+            opacity : 1,
+            color : '#000'
+        }, 500, function(){
+           heart.animate({
+               opacity: 0,
+               color: '#fff'
+           }, 1000);
+        })
+    }
+    
+    mainBtn.click(function(){
+        var ind = $(this).index() + 1;
+        var offset = $('.cnt0' + ind).offset();
+        $('html, body').animate({scrollTop : offset.top - 40}, 500);
+    });
 
     
+    $('.cnt01 .menu').find('h4:last').click(screenHeart);
+    cnt04Btn.click(screenHeart);
+
     //drag
     $('.cnt01 .btn:first').draggable({
         containment : 'parent',
