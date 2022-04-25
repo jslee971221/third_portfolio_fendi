@@ -6,7 +6,6 @@ $(function(){
     var cnt02ArtCnt = [];
     var cnt03Btn = $('.cnt03 .btn');
     var cnt03ArtGroup = $('.cnt03 .artGroup');
-    var cnt03Ml = 0;
     var cnt04Btn = $('.cnt04 .btn');
     var wd = $(window).width();
     function screenHeart(){

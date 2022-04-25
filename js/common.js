@@ -1,7 +1,7 @@
 $(function(){
 
-
-    $('.hdr').load('../inc/header.html', function(){
+    //헤더 로딩
+    $('.hdr').load('./inc/header.html', function(){
         var bars = $('.hdrWrap nav h4').last();
         var menu = $('.hdrWrap .bar')
         var hdrFlag = true;
@@ -15,8 +15,8 @@ $(function(){
         });
     });
 
-
-    $('.ftr').load('../inc/footer.html', function(){
+    //푸터 로딩
+    $('.ftr').load('./inc/footer.html', function(){
         var ftrBtn = $('footer nav li:nth-child(1)');
         var wd = $(window).width();
         if(wd > 480 && wd <= 1024){
@@ -33,6 +33,4 @@ $(function(){
             });
         }
     });
-
-    
 });

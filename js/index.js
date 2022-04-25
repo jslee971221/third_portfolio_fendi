@@ -1,6 +1,5 @@
 $(function(){
     //변수
-
     var cnt01Pbtn = $('.cnt01 .paging li');
     var cnt01artGroup = $('.cnt01 .artGroup');
     var cnt01Index;
