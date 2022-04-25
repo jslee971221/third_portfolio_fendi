@@ -1,14 +1,11 @@
 $(function(){
     //변수
-    var bars = $('.hdrWrap nav h4').last();
-    var menu = $('.hdrWrap .bar')
-    var hdrFlag = true;
+
     var cnt01Pbtn = $('.cnt01 .paging li');
     var cnt01artGroup = $('.cnt01 .artGroup');
     var cnt01Index;
     var cnt04Btn = $('.cnt04 .btns i');
     var cnt04artGroup = $('.cnt04 .artGroup');
-    var ftrBtn = $('footer nav li:nth-child(1)');
     var wd = $(window).width();
     //함수
     function infiSlide(j){
