@@ -5,15 +5,19 @@ html{
 body{
     font-size: 1.3vw;
 }
-.hdrWrap header>a:nth-child(1){
-    margin: 0 auto;
-}
 .hdrWrap header{
     width: 90%;
     max-width: 700px;
 }
 .hdrWrap nav{
-    display: none;
+    width: calc(100% / 8 * 4);
+    font-size: min(1.6em, 16px);
+}
+.hdrWrap nav i{
+    font-size: min(2em, 20px);
+}
+.hdrWrap .bar{
+    width: calc(100% / 8 * 4 / 5);
 }
 
 .main{

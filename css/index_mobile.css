@@ -5,6 +5,17 @@ html{
 body{
     font-size: 2.4vw;
 }
+.hdrWrap nav{
+    width: calc(100% / 4 * 3);
+    font-size: min(1.4em, 14px);
+}
+.hdrWrap nav i{
+    font-size: min(1.5em, 15px);
+    line-height: 40px;
+}
+.hdrWrap .bar{
+    width: calc(100% / 4 * 3 / 5);
+}
 .mainWrap .left{
     height: min(8rem, 320px);
 }

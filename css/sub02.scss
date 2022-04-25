@@ -298,6 +298,7 @@ html{
                     width: calc(100% / 12 * 8);
                     position: relative;
                     height: #{'min(19rem, 760px)'};
+                    
                     article{
                         width: 100%;
                         position: absolute;
@@ -321,26 +322,51 @@ html{
         }
     }
 }
+
+
+
 .ftrWrap{
     margin-top: #{'min(3rem, 120px)'};
     background-color: #878787;
     footer{
         padding-top: #{'min(1rem, 40px)'}; 
         padding-bottom: #{'min(0.5rem, 20px)'}; 
+        @include tab{
+            height: #{'min(11rem, 440px)'};
+            position: relative;
+        }
         nav{
             @include flexset;
             justify-content: space-around;
             text-align: center;
             ul{
+                @include tab{
+                    height: #{'min(1rem, 40px)'};
+                    overflow: hidden;
+                    &:nth-child(4){
+                        li{
+                            border-right: none;
+                        }
+                    }
+                }
                 li{
                     line-height: #{'min(1rem, 40px)'};
                     font-size: #{'min(1.4em, 14px)'};
+                    @include tab{
+                        border-right: 1px solid pink ;
+                        text-align: center;
+                        padding-right: #{'min(0.5rem, 20px)'};
+                    }
                     &:nth-child(1){
                         font-family: 'gowun-bold';
                         line-height: #{'min(1rem, 40px)'};
                         font-size: #{'min(1.8em, 18px)'};
                         i{
                             display: none;
+                            @include tab{
+                                display: inline;
+                                font-size: #{'min(1.5em, 15px)'};
+                            }
                         }
                     }
                     i{
@@ -352,12 +378,23 @@ html{
         .info{
             text-align: right;
             margin-top: #{'max(-3rem, -120px)'};
+            @include tab{
+                width: 100%;
+                margin-top: 0px;
+                position: absolute;
+                right: 0;
+                bottom: #{'min(1rem, 40px)'};
+            }
             h1{
                 @include bgset;
                 background-size: contain;
                 width: calc(100% / 12);
                 height: #{'min(2rem, 80px)'};
                 margin-left: auto;
+                background-image: url('../images/main/ftr_logo.png');
+                @include tab{
+                    width: calc(100% / 8);
+                }
             }
             h4{
                 line-height: #{'min(0.5rem, 20px)'};

@@ -57,13 +57,13 @@ nav h4{
     opacity: 0;
 }
 .hdrWrap nav{
-    width: calc(100% / 12 * 4.5);
+    width: calc(100% / 12 * 5.5);
     display: flex;
     justify-content: space-around;
     font-size: min(2em, 20px);
 }
 .hdrWrap nav i{
-    font-size: min(3em, 30px);
+    font-size: min(2.5em, 25px);
 }
 
 .hdrWrap .bar::before{
@@ -79,7 +79,7 @@ nav h4{
     z-index: 4;
 }
 .hdrWrap .bar{
-    width: calc(100% / 12 * 4.5 / 5);
+    width: calc(100% / 12 * 5.5 / 5);
     height: min(6rem, 240px);
     position: absolute;
     display: flex;

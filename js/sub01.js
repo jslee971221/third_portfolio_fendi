@@ -31,30 +31,7 @@ $(function(){
     $('.cnt01 .menu').find('h4:last').click(screenHeart);
     cnt04Btn.click(screenHeart);
 
-    //drag
-    $('.cnt01 .btn:first').draggable({
-        containment : 'parent',
-        drag: function(){
-            var barWd = $('.cnt01 .menu .ovrGrid').width();
-            var currentX = $(this).css('left').slice(0, -2);
-            var x =  Number(currentX) / barWd * 100; 
-            console.log(x);
-            $('.cnt01 .artGroup:first').css('marginLeft', (-100 + x) + '%');
-            $('.shadow:first').css('width', 100-x + '%')
-        }
-    });
-    $('.cnt01 .btn:last').draggable({
-        containment : 'parent',
-        drag: function(){
-            var barWd = $('.cnt01 .menu .ovrGrid').width();
-            var currentX = $(this).css('left').slice(0, -2);
-            var x =  Number(currentX) / barWd * 100; 
-            console.log(x);
-            $('.cnt01 .artGroup:last').css('marginRight', -x + '%');
-            $('.shadow:last').css('width', x + 1.2 + '%')
-        }
-    });
-    
+   
     //아티클 이동
     cnt02Btn.first().click(function(j){
         //article 저장     
@@ -84,6 +61,7 @@ $(function(){
             }
         } 
     });
+
     $('.cnt02').on('click', '.artGroup article', function(){
         var current = $(this).index();
         var j = cnt02Article.length - 1;
@@ -100,45 +78,91 @@ $(function(){
             if(current >= cnt02Article.length){
                 current = 0;
             }
-        } 
-        
+        }
     });
 
 
-    cnt03ArtGroup.first().css('margin-left', '-20%');
-    cnt03ArtGroup.first().find('article:first').appendTo(cnt03ArtGroup.first());
-    cnt03Btn.first().click(function(){
-        cnt03ArtGroup.first().animate({
-            marginLeft :  -40 + '%'
-        }, 500, function(){
-            cnt03ArtGroup.first().css('margin-left', '-20%');
-            cnt03ArtGroup.first().find('article:first').appendTo(cnt03ArtGroup.first());
-        });
-    });
 
-
-    cnt03ArtGroup.last().css('margin-right', '-20%');
-    cnt03ArtGroup.last().find('article:first').appendTo(cnt03ArtGroup.last());
-    cnt03Btn.last().click(function(){
-        cnt03ArtGroup.last().animate({
-            marginRight : -40 + '%'
-        }, 500, function(){
-            cnt03ArtGroup.last().find('article:first').appendTo(cnt03ArtGroup.last());
-            cnt03ArtGroup.last().css('margin-right', '-20%');
-        });
-    });
 
 
     //PC
     if(wd > 1024){
-        //헤더 햄버거
 
+         //drag
+        $('.cnt01 .btn:first').draggable({
+            containment : 'parent',
+            drag: function(){
+                var barWd = $('.cnt01 .menu .ovrGrid').width();
+                var currentX = $(this).css('left').slice(0, -2);
+                var x =  Number(currentX) / barWd * 100; 
+                $('.cnt01 .artGroup:first').css('marginLeft', (-100 + x) + '%');
+                $('.shadow:first').css('width', 100-x + '%')
+            }
+        });
+        $('.cnt01 .btn:last').draggable({
+            containment : 'parent',
+            drag: function(){
+                var barWd = $('.cnt01 .menu .ovrGrid').width();
+                var currentX = $(this).css('left').slice(0, -2);
+                var x =  Number(currentX) / barWd * 100; 
+                $('.cnt01 .artGroup:last').css('marginRight', -x + '%');
+                $('.shadow:last').css('width', x + 1.2 + '%')
+            }
+        });
+    
+
+        cnt03ArtGroup.first().css('margin-left', '-20%');
+        cnt03ArtGroup.first().find('article:first').appendTo(cnt03ArtGroup.first());
+        cnt03Btn.first().click(function(){
+            cnt03ArtGroup.first().animate({
+                marginLeft :  -40 + '%'
+            }, 500, function(){
+                cnt03ArtGroup.first().css('margin-left', '-20%');
+                cnt03ArtGroup.first().find('article:first').appendTo(cnt03ArtGroup.first());
+            });
+        });
+    
+    
+        cnt03ArtGroup.last().css('margin-right', '-20%');
+        cnt03ArtGroup.last().find('article:first').appendTo(cnt03ArtGroup.last());
+        cnt03Btn.last().click(function(){
+            cnt03ArtGroup.last().animate({
+                marginRight : -40 + '%'
+            }, 500, function(){
+                cnt03ArtGroup.last().find('article:first').appendTo(cnt03ArtGroup.last());
+                cnt03ArtGroup.last().css('margin-right', '-20%');
+            });
+        });
 
        
     //TABLET    
     }else if(wd > 480 && wd <= 1024){
-
-    
+        var tabBtns = $('.tabBtn');
+        var tabBtn = $('.tabBtn i');
+        var cnt03ArtViewGroup = $('.artViewGroup');
+        function tabBtn1to2(){
+            cnt03ArtViewGroup.css('marginLeft', '-100%');
+            tabBtns.css({
+                left : 'inherit',
+                right : 'calc(50% / 8 * 3 - 20px)'
+            });
+            tabBtns.find('span').removeClass('show');
+            tabBtns.find('span:eq(1)').addClass('show');
+        }
+        function tabBtn2to1(){
+            cnt03ArtViewGroup.css('marginLeft', '0');
+            tabBtns.css({
+                right : 'inherit',
+                left : 'calc(50% / 8 * 3)'
+            });
+            tabBtns.find('span').removeClass('show');
+            tabBtns.find('span:eq(0)').addClass('show');
+        }
+        
+        tabBtn.last().click(tabBtn1to2);
+        tabBtn.first().click(tabBtn2to1);
+        tabBtns.find('span:eq(0)').click(tabBtn2to1);
+        tabBtns.find('span:eq(1)').click(tabBtn1to2);
     //MOBILE
     }else if(wd <= 480){
     }
