@@ -165,6 +165,36 @@ $(function(){
         tabBtns.find('span:eq(1)').click(tabBtn1to2);
     //MOBILE
     }else if(wd <= 480){
+        var moBtns = $('.moBtn');
+        var moBtn = $('.moBtn i');
+        var cnt03ArtGroup1 = $('.artViewTop .artGroup');
+        var cnt03i = 0;
+        function move(cnt03i){
+            
+            cnt03ArtGroup1.css({
+                marginLeft : -100 * cnt03i + '%'
+            });
+            moBtns.find('span').removeClass('show');
+            moBtns.find('span:eq(' + cnt03i + ')').addClass('show');
+        }
+        moBtn.first().click(function(){
+            cnt03i--;
+            if(cnt03i <= 0){
+                cnt03i = 0;
+            }
+            move(cnt03i);
+        });
+        moBtn.last().click(function(){
+            cnt03i++;
+            if(cnt03i >= 3){
+                cnt03i = 3;
+            }
+            move(cnt03i);
+        });
+        moBtns.find('span').click(function(){
+            cnt03i = $(this).index() - 1;
+            move(cnt03i);
+        })
     }
 
 });

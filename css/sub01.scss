@@ -12,7 +12,7 @@
         max-width: 700px;
     }
     @else if($dev == 'mob'){
-        width: 80%;
+        width: 90%;
         max-width: 380px;
     }
     @else{
@@ -183,7 +183,7 @@ html{
             
         }
         @include mob{
-            
+            height: #{'min(6rem, 240px)'};
         }
         .image{
             &.i1{
@@ -196,7 +196,7 @@ html{
                     margin-left: auto;
                 }
                 @include mob{
-                    
+                    height: #{'min(6rem, 240px)'};
                 }
                 .ovrGrid{
                     width: calc(100% + (100vw - 1080px) / 2);
@@ -212,7 +212,8 @@ html{
                         right: #{'min(calc((100vw - 700px) / -2), calc((100vw - 90vw) / -2))'};
                     }
                     @include mob{
-                        
+                        height: #{'min(6rem, 240px)'};
+                        right: #{'min(calc((100vw - 380px) / -2), calc((100vw - 90vw) / -2))'};
                     }
                 }
             }
@@ -231,7 +232,7 @@ html{
                     margin: auto;
                 }
                 @include mob{
-                    
+                    height: #{'min(6rem, 240px)'};
                 }
             }
             &.i3{
@@ -246,7 +247,7 @@ html{
                     left: #{'min(calc((100vw - 700px) / -2), calc((100vw - 90vw) / -2))'};
                 }
                 @include mob{
-                    
+                    left: #{'min(calc((100vw - 380px) / -2), calc((100vw - 90vw) / -2))'};
                 }
                 .ovrGrid{
                     width: 120%;
@@ -259,7 +260,7 @@ html{
                         margin-left: 0px;
                     }
                     @include mob{
-                        
+                        height: #{'min(6rem, 240px)'};
                     }
                 }
                 
@@ -287,7 +288,7 @@ html{
                 }
             }
             @include mob{
-                
+                display: none;
             }
         }
     }
@@ -295,6 +296,9 @@ html{
 
 .cntWrap{
     margin-top: #{'min(2rem, 80px)'};
+    @include mob{
+        margin-top: 0;
+    }
     
     .content{
         header{
@@ -303,11 +307,18 @@ html{
                 font-size: #{'min(3em, 30px)'};
                 line-height: #{'min(1rem, 40px)'};
                 font-family: 'gowun-bold';
+                @include mob{
+                    font-size: #{'min(1.6em, 16px)'};
+                    line-height: #{'min(2rem, 80px)'};
+                }
             }
         }
         section{
             @include flexset;
             margin-top: #{'min(2rem, 80px)'};
+            @include mob{
+                margin-top: 0;
+            }
         }
 
         &.cnt01{
@@ -459,7 +470,23 @@ html{
                                     }
                                 }
                                 @include mob{
-                                    
+                                    display: block;
+                                    &:nth-child(1), &:nth-child(3){
+                                        flex-direction: row-reverse;
+                                        a{
+                                            border-left: none;
+                                        
+                                        }
+                                    }
+                                    &:nth-child(2), &:nth-child(4){
+                                        a{
+                                            border-right: none;
+                                            .image{
+                                                margin-top: 0;
+                                                
+                                            }
+                                         }
+                                    }
                                 }
                                 a{ 
                                     width: 100%;
@@ -468,7 +495,7 @@ html{
                                         
                                     }
                                     @include mob{
-                                        
+                                        width: 100%;
                                     }
                                     .image{
                                         width: 100%;
@@ -479,7 +506,8 @@ html{
                                             height: #{'min(8rem, 320px)'};
                                         }
                                         @include mob{
-                                            
+                                            width: calc(100% / 4 * 2 + 20px);
+                                            height: #{'min(5rem, 200px)'};
                                         }
                                     }
                                 }
@@ -504,7 +532,20 @@ html{
                                         
                                     }
                                     @include mob{
-                                        
+                                        width: 100%;
+                                        text-align: center;
+                                        display: block;
+                                        height: #{'min(3rem, 120px)'};
+                                        padding-top: #{'min(0.5rem, 20px)'};
+                                        padding-bottom: 0;
+                                        a{
+                                            height: #{'min(1rem, 40px)'};
+                                        }
+                                        h4{
+                                            line-height: #{'min(1rem, 40px)'};
+                                            font-size: #{'min(1.4em, 14px)'};
+                                            font-family: 'gowun-bold';
+                                        }
                                     }
                                 }
                             }                         
@@ -519,6 +560,9 @@ html{
                 display: block;
                 position: relative;
                 margin-top: #{'min(3rem, 120px)'};
+                @include mob{
+                    margin-top: 0px;
+                }
                 .btns{
                     width: 120%;
                     height: #{'min(1rem, 40px)'};
@@ -530,6 +574,15 @@ html{
 
                     @include flexset;
                     margin-left: -10%;
+                    @include mob{
+                        width: 80%;
+                        margin-left: 0px;
+                        color: #666;
+                        left: 0;
+                        right: 0;
+                        margin: auto;
+                        top: #{'min(2.5rem, 100px)'};
+                    }
                 }
                 .image{
                     height: #{'min(7rem, 280px)'};
@@ -562,7 +615,9 @@ html{
                             }
                         }
                         @include mob{
-
+                            &:nth-child(1), &:nth-child(5){
+                                display: none;
+                            }
                         }
                     }
                 }
@@ -574,7 +629,8 @@ html{
                         margin-top: #{'max(-8rem, -320px)'};
                     }
                     @include mob{
-
+                        margin-top: 0;
+                        width: calc(100% / 4 * 2 - 20px);
                     }
                     article{
                         width: 100%;
@@ -584,7 +640,7 @@ html{
                                 height: #{'min(8rem, 320px)'};
                             }
                             @include mob{
-
+                                height: #{'min(4rem, 160px)'};
                             }
                         }
                         .texts{
@@ -601,6 +657,21 @@ html{
                                     margin-top: #{'min(1rem, 40px)'};
                                 }
                             }
+                            @include mob{
+                                
+                            h3{
+                                font-size: #{'min(1.4em, 14px)'};
+                                line-height: #{'min(1rem, 40px)'};
+                                margin-top: 0px;
+                            }
+                            h4{
+                                font-size: #{'min(1.2em, 14px)'};
+                                line-height: #{'min(0.5rem, 20px)'};
+                                &:nth-child(2){
+                                    margin-top: #{'min(0.5rem, 20px)'};
+                                }
+                            }
+                            }
                         }
                     }
                 }
@@ -613,6 +684,9 @@ html{
                     margin-top: #{'min(1rem, 40px)'};
                     overflow: hidden;
                 }
+                @include mob{
+                    margin-top: 0;
+                }
                 .artViewGroup{
                     width: 100%;
                     @include tab{
@@ -622,12 +696,35 @@ html{
                         position: relative;
                     }
                     @include mob{
+                        width: 100%;
+                        height: #{'min(7rem, 280px)'};
                     }
                     .moBtn{
                         display: none;
                         @include mob{
+                            z-index: 999;
                             display: flex;
                             justify-content: space-between;
+                            width: calc(100% / 4 * 2 + 20px);
+                            height: #{'min(2rem, 80px)'};
+                            position: absolute;
+                            bottom: 0;
+                            left: 0;
+                            right: 0;
+                            margin: auto;
+                            font-size: #{'min(1.6em, 16px)'};
+                            line-height: #{'min(2rem, 80px)'};
+                            span{
+                                color: #aaa;
+                                line-height: #{'min(2rem, 80px)'};
+                                &.show{
+                                    color: #000;
+                                    font-weight: 700;
+                                }
+                            }
+                            i{
+                                line-height: #{'min(2rem, 80px)'};
+                            }
                         }
                     }
                     .tabBtn{
@@ -651,6 +748,9 @@ html{
                                 }
                             }
                         }
+                        @include mob{
+                            display: none;
+                        }
                     }
                     .btn{
                         position: absolute;
@@ -663,6 +763,12 @@ html{
                         height: #{'min(2rem, 80px)'};;
                         font-size: #{'min(2.4em, 24px)'};
                         font-weight: 700;
+                        @include mob{
+                            display: none;
+                        }
+                        @include tab{
+                            display: none;
+                        }
                     }
                     .ovrGrid{
                         width: calc(100% + (100vw - 1080px) / 2);
@@ -683,7 +789,7 @@ html{
                                 flex-wrap: wrap;
                             }
                             @include mob{
-
+                                width: 400%;
                             }
                             article{
                                 width: calc(100% / 9 - 20px);
@@ -701,12 +807,25 @@ html{
                                     }
                                 }
                                 @include mob{
-
+                                    width: calc(100% / 8 - 20px);
+                                    &:nth-child(8){
+                                        display: block;
+                                    }
+                                    &:nth-child(4)~article{
+                                        width: calc(100% / 8 - 20px);
+                                        margin-top: 0;
+                                        .image{
+                                            height: #{'min(5rem, 200px)'};
+                                        }
+                                    }
                                 }
                                 .image{
                                     height: #{'min(6rem, 240px)'};
                                     @include tab{
                                         height: #{'min(4rem, 160px)'};
+                                    }
+                                    @include mob{
+                                        height: #{'min(5rem, 200px)'};
                                     }
                                     @for $i from 1 through 18{
                                         &.i#{$i}{
@@ -728,6 +847,9 @@ html{
                         .btn{
                                 left: calc(100% / -12);
                         }
+                        @include mob{
+                            height: #{'min(7rem, 280px)'};
+                        }
                     }
                     .artViewBtm{
                         margin-top: #{'min(1rem, 40px)'};
@@ -739,6 +861,9 @@ html{
                             height: #{'min(11rem, 440px)'};
                             margin-top: 0;
                             direction: ltr;
+                        }
+                        @include mob{
+                            display: none;
                         }
                         .btn{
                             right: calc(100% / -12);
@@ -760,9 +885,14 @@ html{
                 @include tab{
                     height: #{'min(27rem, 1080px)'};
                 }
+                @include mob{
+                    height: #{'min(15rem, 600px)'};
+                }
                 article{
                     width: calc(50% - 20px);
-                    
+                    &:nth-child(2)~article{
+                        margin-top: #{'min(1rem, 40px)'};
+                    }
                     @include tab{
                         width: 100%;
                         height: #{'min(6rem, 240px)'};
@@ -775,14 +905,51 @@ html{
                             flex-direction: row-reverse;
                         }
                     }
-                    &:nth-child(2)~article{
-                        margin-top: #{'min(1rem, 40px)'};
+                    @include mob{
+                        width: 100vw;
+                        margin-left: #{'min(calc((100vw - 380px) / -2), calc((100vw - 90vw) / -2))'};
+                        height: #{'min(7rem, 280px)'};
+                        position: relative;
+                        &:nth-child(2)~article{
+                            margin-top: 0;
+                        }
+                        &:nth-child(1)~article{
+                            margin-top: 0;
+                        }
+                        &:nth-child(odd){
+                            .image{
+                                clip-path: polygon(0 0, 0 100%, 100% 0);
+                            }
+                            
+                        }
+                        &:nth-child(even){
+                            
+                            .texts{
+                                .btn{
+                                    right: 0;
+                                    top: #{'min(0.5rem, 20px)'};
+                                    margin-left: auto;
+                                }
+                            }
+                            .image{
+                                clip-path: polygon(0 100%, 100% 100%, 100% 0);
+                            }
+                        }
+                        &:nth-child(1)+article, &:nth-child(3)+article{
+                            margin-top: #{'max(-6rem, -240px)'};
+                            
+                        }
                     }
+
+                    
                     .image{
                         height: #{'min(8rem, 320px)'};
                         @include tab{
                             width: calc(100% / 8 * 5 - 20px);
                             height: #{'min(6rem, 240px)'};
+                        }
+                        @include mob{
+                            width: 100vw;
                         }
                         @for $i from 1 through 4{
                             &.i#{$i}{
@@ -798,6 +965,16 @@ html{
                         @include tab{
                             padding-top: #{'min(5.25rem, 210px)'};
                         }
+                        @include mob{
+                            padding-top: 0;
+                            width: 40px;
+                            height: 40px;
+                            position: absolute;
+                            bottom: #{'min(1.5rem, 60px)'};
+                            left: 0px;
+                            text-align: center;
+                            z-index: 999;
+                        }
                     }
                 }
             }
@@ -808,6 +985,9 @@ html{
 .ftrWrap{
     margin-top: #{'min(3rem, 120px)'};
     background-color: #878787;
+    @include mob{
+        margin-top: 0;
+    }
     footer{
         padding-top: #{'min(1rem, 40px)'}; 
         padding-bottom: #{'min(0.5rem, 20px)'}; 
@@ -815,10 +995,16 @@ html{
             height: #{'min(11rem, 440px)'};
             position: relative;
         }
+        @include mob{
+            height: #{'min(3rem, 120px)'};
+        }
         nav{
             @include flexset;
             justify-content: space-around;
             text-align: center;
+            @include mob{
+                display: none;
+            }
             ul{
                 @include tab{
                     height: #{'min(1rem, 40px)'};
@@ -865,6 +1051,15 @@ html{
                 right: 0;
                 bottom: #{'min(1rem, 40px)'};
             }
+            @include mob{
+                text-align: center;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                left: 0;
+                margin: auto;
+                padding-top: #{'min(0.5rem, 20px)'};
+            }
             h1{
                 @include bgset;
                 background-size: contain;
@@ -874,6 +1069,11 @@ html{
                 background-image: url('../images/main/ftr_logo.png');
                 @include tab{
                     width: calc(100% / 8);
+                }
+                @include mob{
+                    width: calc(100% / 4);
+                    height: #{'min(1rem, 40px)'};
+                    margin: 0 auto;
                 }
             }
             h4{
@@ -900,6 +1100,10 @@ html{
         opacity: 0.8;
         font-size: #{'min(50em, 500px)'};
         line-height: 50vw;
+        @include mob{
+            font-size: #{'min(25em, 250px)'};
+            text-align: center;
+        }
     }
     
 }
