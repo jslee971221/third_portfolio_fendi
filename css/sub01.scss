@@ -574,6 +574,10 @@ html{
 
                     @include flexset;
                     margin-left: -10%;
+                    @include tab{
+                        width: 100%;
+                        margin-left: 0;
+                    }
                     @include mob{
                         width: 80%;
                         margin-left: 0px;
@@ -1093,7 +1097,7 @@ html{
     right: 0;
     bottom: 0;
     text-align: center;
-    color: #fff;
+    color: #000;
     opacity: 0;
     pointer-events: none;
     i{

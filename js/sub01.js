@@ -11,12 +11,10 @@ $(function(){
     function screenHeart(){
         var heart = $('.heart');
         heart.animate({
-            opacity : 1,
-            color : '#000' 
+            opacity : 1
         }, 500, function(){
            heart.animate({
-               opacity: 0,
-               color: '#fff'
+               opacity: 0
            }, 1000);
         })
     }
