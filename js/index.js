@@ -21,15 +21,6 @@ $(function(){
     }
     //PC
     if(wd > 1024){
-        //헤더 햄버거
-        bars.click(function(){
-            if(hdrFlag){
-                menu.css('opacity', 1);
-            }else{
-                menu.css('opacity', 0);
-            }
-            hdrFlag = !hdrFlag;
-        }); 
 
         //컨텐츠1 페이징 가로
         cnt01Pbtn.click(function(){
@@ -72,18 +63,6 @@ $(function(){
             infiSlide(-200);
         });
 
-        //푸터 더보기 버튼
-        ftrBtn.click(function(){
-            var th = $(this);
-            var i = th.parent().index();
-            if($(this).find('i').attr('class') == 'xi-caret-down'){
-                $('footer ul').eq(i).css('height', 'min(9rem, 360px)'); 
-                th.find('i').attr('class','xi-caret-up');
-            }else{
-                $('footer ul').eq(i).css('height', 'min(1rem, 40px)'); 
-                th.find('i').attr('class','xi-caret-down');
-            }
-        });
     //MOBILE
     }else if(wd <= 480){
         //기본 설정
