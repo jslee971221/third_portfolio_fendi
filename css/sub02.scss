@@ -196,12 +196,25 @@ html{
                     margin-right: #{'min(calc((100vw - 700px) / -2),calc((100vw - 90vw) / -2))'};
                 }
             }
+            @include mob{
+                width: calc(100vw / 3);
+                height: #{'min(6rem, 240px)'};
+                &.i1{
+                    margin-left: #{'min(calc((100vw - 380px) / -2),calc((100vw - 90vw) / -2))'};
+                }
+                &.i3{
+                    margin-right: #{'min(calc((100vw - 380px) / -2),calc((100vw - 90vw) / -2))'};
+                }
+            }
         }
     }
 }
 
 .cntWrap{
     margin-top: #{'min(2rem, 80px)'};
+    @include mob{
+        margin-top: 0;
+    }
     .content{
         header{
             text-align: center;
@@ -209,28 +222,58 @@ html{
                 font-size: #{'min(2.4em, 24px)'};
                 font-family: 'gowun-bold';
                 line-height: #{'min(1rem, 40px)'};
+                br{
+                    display: none;
+                }
                 @include tab{
                     font-size: #{'min(1.8em, 18px)'};
+                }
+                @include mob{
+                    font-size: #{'min(1.4em, 14px)'};
+                    line-height: #{'min(2rem, 80px)'};
+                    br{
+                        display: block;
+                    }
                 }
             }
         }
         section{
             @include flexset;
             margin-top: #{'min(1rem, 40px)'};
+            @include mob{
+                margin-top: 0;
+            }
         }
         &.cnt01{
+            header{
+                h2{
+                    @include mob{
+                        line-height: #{'min(0.5rem, 20px)'};
+                        margin-top: #{'min(1rem, 40px)'};
+                    }
+                }
+            }
             section{
+                @include mob{
+                    margin-top: #{'min(1rem, 40px)'};
+                    flex-wrap: wrap;
+                }
                 .image{
                     @for $i from 1 through 6{
                         &.i#{$i}{
                             background-image: url('../images/sub02/cnt01_#{$i}.jpg');
                         }
                     }
+                    
+                    
                 }
                 .artLeft{
                     width: calc(100% / 12 * 7.3);
                     @include tab{
                         width: calc(100% / 8 * 5 - 20px);
+                    }
+                    @include mob{
+                        width: 100%;
                     }
                     .artTop{
                         article{
@@ -239,6 +282,11 @@ html{
                                 height: #{'min(12rem, 480px)'};
                                 @include tab{
                                     height: #{'min(8rem, 320px)'}; 
+                                }
+                                @include mob{
+                                    width: 100vw;
+                                    height: #{'min(10rem, 400px)'}; 
+                                    margin-left: #{'min(calc((100vw - 380px) / -2), calc((100vw - 90vw) / -2))'};
                                 }
                             }
                         }
@@ -255,6 +303,9 @@ html{
                                     height: #{'min(5rem, 200px)'};
                                     background-position: center;
                                 }
+                                @include mob{
+                                    height: #{'min(4rem, 160px)'};
+                                }
                             }
                         }
                     }
@@ -264,21 +315,52 @@ html{
                     @include tab{
                         width: calc(100% / 8 * 2);
                     }
+                    @include mob{
+                        width: 100%;
+                        display: flex;
+                        justify-content: space-between;
+                    }
                     article{
                         @include tab{
                             &:nth-child(1){
                                 .image{
                                     height: #{'min(3rem, 120px)'};
                                     background-position-y: #{'max(-1rem, -40px)'};
+                                    
                                 }
                             }
                             &:nth-child(2){
                                 .image{
                                     height: #{'min(4rem, 160px)'};
                                     background-position-y: #{'max(-0.5rem, -20px)'};
+                                    
+                                }
+                            }
+                            @include mob{
+                                &:nth-child(3){
+                                    display: none;
+                                }
+                                &:nth-child(1){
+                                    margin-top: #{'min(1rem, 40px)'};
+                                    .image{
+                                        height: #{'min(4rem, 160px)'};
+                                        background-position-y: center;
+                                        
+                                    }
+                                }
+                                &:nth-child(2){
+                                    .image{
+                                        height: #{'min(4rem, 160px)'};
+                                        background-position-y: center;
+                                        
+                                    }
                                 }
                             }
                         }
+                        @include mob{
+                            width: calc(50% - 20px);
+                        }
+                
                         &:nth-child(1)~article{
                             margin-top: #{'min(1rem, 40px)'};
                         }
@@ -290,6 +372,7 @@ html{
                                 height: #{'min(5rem, 200px)'};
                                 background-position: center;
                             }
+                            
                         }
                     }
                 }
@@ -298,6 +381,9 @@ html{
 
         &.cnt02{
             section{
+                @include mob{
+                    display: block;
+                }
                 .image{
                     @for $i from 1 through 10{
                         &.i#{$i}{
@@ -314,6 +400,10 @@ html{
                         width: calc(100% / 8 * 3);
                         margin-left: 0;
                     }
+                    @include mob{
+                        width: 100%;
+                        height: #{'min(5rem, 200px)'};
+                    }
                     article{
                         &.show{
                             width: 100%;
@@ -324,6 +414,9 @@ html{
                         width: 0%;
                         .image{
                             height: #{'min(13rem, 520px)'};
+                            @include mob{
+                                height: #{'min(5rem, 200px)'};
+                            }
                         }
                     }
                     .paging{
@@ -336,6 +429,9 @@ html{
                         height: #{'min(2rem, 80px)'};
                         display: flex;
                         justify-content: space-around;
+                        @include mob{
+                            display: none;
+                        }
                         li{
                             width: #{'min(0.75rem, 30px)'};
                             height: #{'min(0.75rem, 30px)'};
@@ -359,21 +455,39 @@ html{
                         width: calc(100% / 8 * 4 - 20px);
                         flex-direction: row-reverse;
                     }
+                    @include mob{
+                        width: 100%;
+                        display: block;
+                    }
                     .artMid{
                         width: calc(100% / 6 * 2.5);
                         @include tab{
                             width: calc(50% - 20px);
                             margin-top: #{'min(2rem, 80px)'};
                         }
+                        @include mob{
+                            width: 100%;
+                            display: flex;
+                            justify-content: space-between;
+                        }
                         article{
+                            @include mob{
+                                width: calc(50% - 20px);
+                            }
                             .image{
                                 height: #{'min(6rem, 240px)'};
                                 @include tab{
                                     height: #{'min(4rem, 160px)'};
                                 }
+                                @include mob{
+                                    height: #{'min(3rem, 120px)'};
+                                }
                             }
                             &:nth-child(2){
                                 margin-top: #{'min(1rem, 40px)'};
+                                @include mob{
+                                    margin-top: 0;
+                                }
                             }
                         }
                     }
@@ -382,12 +496,29 @@ html{
                         @include tab{
                             width: calc(50% - 20px);
                         }
+                        @include mob{
+                            width: 100%;
+                            display: flex;
+                            justify-content: space-between;
+                            flex-wrap: wrap;
+                        }
                         article{
+                            @include mob{
+                                width: calc(50% - 20px);
+                                margin-top: #{'min(1rem, 40px)'};
+                                &:nth-child(1){
+                                    display: none;
+                                }
+                            }
                             .image{
                                 height: #{'min(4rem, 160px)'};
                                 background-position-y: #{'max(-2.5rem, -100px)'};
                                 @include tab{
                                     background-position: center;
+                                }
+                                @include mob{
+                                    height: #{'min(3rem, 120px)'};
+                                    background-position-y: #{'max(-1rem, -40px)'};
                                 }
                             }
                             &:nth-child(1)~article{
@@ -420,6 +551,10 @@ html{
                         justify-content: space-between;
                         margin-top: #{'min(2rem, 80px)'};
                     }
+                    @include mob{
+                        flex-wrap: wrap;
+                        margin-top: #{'min(1rem, 40px)'};
+                    }
                     article{
                         width: 100%;
                         display: flex;
@@ -427,12 +562,28 @@ html{
                         @include tab{
                             width: calc(100% / 5 - 20px);
                         }
+                        @include mob{
+                            width: calc(50% - 20px);
+                            display: block;
+                            height: #{'min(3rem, 120px)'};
+                        }
                         &:nth-child(1)~article{
                             margin-top: #{'min(1rem, 40px)'};
                             @include tab{
                                 margin-top: 0;
                             }
                         }
+                        &:nth-child(2)~article{
+                            @include mob{
+                                margin-top: #{'min(1rem, 40px)'};
+                            }
+                        }
+                        &:nth-child(3){
+                            @include mob{
+                                margin-left: 27.5%;
+                            }
+                        }
+
                         .image{
                             width: 50%;
                             height: #{'min(3rem, 120px)'};
@@ -441,6 +592,10 @@ html{
                                 background-position-y: #{'max(-1rem, -40px)'};
                                 width: 100%;
                                 height: #{'min(2rem, 80px)'};
+                            }
+                            @include mob{
+                                height: #{'min(3rem, 120px)'};
+                                background-position-y: #{'max(-1.25rem, -50px)'};
                             }
                         }
                         .texts{
@@ -469,6 +624,9 @@ html{
                         width: 100%;
                         height: #{'min(13rem, 520px)'};
                     }
+                    @include mob{
+                        height: #{'min(6rem, 240px)'};
+                    }
                     article{
                         width: 100%;
                         position: absolute;
@@ -477,6 +635,9 @@ html{
                         left: 0;
                         @include tab{
                             height: #{'min(13rem, 520px)'};
+                        }
+                        @include mob{
+                            height: #{'min(6rem, 240px)'};
                         }
                         .image{
                             position: absolute;
@@ -491,6 +652,11 @@ html{
                                         height: #{'min(13rem, 520px)'};
                                         min-width: 100%;
                                         background-position-y: #{'max(-4rem, -160px)'};
+                                    }
+                                    @include mob{
+                                        height: #{'min(6rem, 240px)'};
+                                        width: 100vw;
+                                        margin-left: #{'min(calc((100vw - 380px) / -2), calc((100vw - 90vw) / -2))'};
                                     }
                                 }
                             }
@@ -510,6 +676,9 @@ html{
                     @include tab{
                         width: 100%;
                     }
+                    @include mob{
+                        flex-wrap: wrap;
+                    }
                     &:nth-child(2){
                         margin-top: #{'min(2rem, 80px)'};
                         margin-left: calc(100% / 12 * -2.5);
@@ -527,6 +696,13 @@ html{
                                 display: none;
                             }
                         }
+                        @include mob{
+                            width: calc(50% + 20px);
+                            margin-left: calc(100% / 4 - 10px);
+                            &:nth-child(3){
+                                margin-top: #{'min(1rem, 40px)'};
+                            }
+                        }
                         .image{
                             @for $i from 1 through 6{
                                 &.i#{$i}{
@@ -534,6 +710,9 @@ html{
                                 }
                             }
                             height: #{'min(8rem, 320px)'};
+                            @include mob{
+                                height: #{'min(5rem, 200px)'};
+                            }
                         }
                         .texts{
                             width: #{'min(1rem, 40px)'};
@@ -541,9 +720,19 @@ html{
                             position: absolute;
                             top: #{'min(0.5rem, 20px)'};
                             right: #{'min(0.5rem, 20px)'};
+                            @include mob{
+                                top: #{'min(0.25rem, 10px)'};
+                                right: #{'min(0.25rem, 10px)'};
+                                width: #{'min(0.75rem, 30px)'};
+                                height: #{'min(0.75rem, 30px)'};
+                            }
                             i{
                                 font-size: #{'min(4em, 40px)'};
                                 line-height: #{'min(1rem, 40px)'};
+                                @include mob{
+                                    font-size: #{'min(3em, 30px)'};
+                                    line-height: #{'min(0.75rem, 30px)'};
+                                }
                             }
                         }
                     }
@@ -562,6 +751,9 @@ html{
         @include tab{
             height: #{'min(17rem, 680px)'};
         }
+        @include mob{
+            height: #{'min(9rem, 360px)'};
+        }
         .image{
             @for $i from 1 through 3{
                 &.i#{$i}{
@@ -574,6 +766,12 @@ html{
                     width: 100vw;
                     margin-left: #{'min(calc((100vw - 700px) / -2), calc((100vw - 90vw) / -2))'};
                     height: #{'min(11rem, 440px)'};
+                }
+                @include mob{
+                    width: calc((100% / 4 * 3 - 20px)  + (100vw - 380px) / 2);
+                    min-width: calc((100% / 4 * 3 - 20px) + (100vw - 90vw) / 2);
+                    margin-left: #{'min(calc((100vw - 380px) / -2), calc((100vw - 90vw) / -2))'};
+                    height: #{'min(9rem, 360px)'};
                 }
             }
             &.i2{
@@ -588,6 +786,9 @@ html{
                     top: #{'min(4rem, 160px)'};
                     right: 0;
                 }
+                @include mob{
+                    display: none;
+                }
             }
             &.i3{
                 width: calc(100% / 12 * 4);
@@ -600,6 +801,9 @@ html{
                     top: #{'min(8rem, 320px)'};
                     left: calc(100% / 8 * 2 - 20px);
                 }
+                @include mob{
+                    display: none;
+                }
             }
         }
     }
@@ -608,12 +812,19 @@ html{
         bottom: 0;
         right: 0;
         text-align: right;
+        @include mob{
+            bottom: #{'min(1rem, 40px)'};
+            text-shadow: 2px 2px 4px black;
+        }
         h2{
             font-size: #{'min(2.4em, 24px)'};
             font-family: 'gowun-bold';
             line-height: #{'min(1rem, 40px)'};
             @include tab{
                 font-size: #{'min(1.8em, 18px)'};
+            }
+            @include mob{
+                font-size: #{'min(1.4em, 14px)'};
             }
         }
         .btn{
@@ -622,6 +833,11 @@ html{
             margin-top: #{'min(0.5rem, 20px)'};
             @include tab{
                 margin-top: #{'min(0.25rem, 10px)'};
+            }
+            @include mob{
+                font-size: #{'min(1.4em, 14px)'};
+                line-height: #{'min(0.5rem, 20px)'};
+                margin-top: 0;
             }
         }
     }
