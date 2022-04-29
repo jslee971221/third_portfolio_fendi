@@ -663,18 +663,19 @@ html{
                             }
                             @include mob{
                                 
-                            h3{
-                                font-size: #{'min(1.4em, 14px)'};
-                                line-height: #{'min(1rem, 40px)'};
-                                margin-top: 0px;
-                            }
-                            h4{
-                                font-size: #{'min(1.2em, 14px)'};
-                                line-height: #{'min(0.5rem, 20px)'};
-                                &:nth-child(2){
-                                    margin-top: #{'min(0.5rem, 20px)'};
+                                h3{
+                                    font-size: #{'min(1.4em, 14px)'};
+                                    line-height: #{'min(1rem, 40px)'};
+                                    margin-top: 0px;
                                 }
-                            }
+                                h4{
+                                    font-size: #{'min(1.2em, 14px)'};
+                                    line-height: #{'min(0.5rem, 20px)'};
+                                    height: #{'min(1rem, 40px)'};
+                                    &:nth-child(2){
+                                        margin-top: #{'min(0.5rem, 20px)'};
+                                    }
+                                }
                             }
                         }
                     }
