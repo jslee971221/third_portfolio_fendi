@@ -65,12 +65,10 @@ $(function(){
 
     //MOBILE
     }else if(wd <= 480){
-        //기본 설정
         //컨텐츠1 이미지 순서 바꾸기
         for(var i = 1; i<12; i+=3){
             var i1 = $('.cnt01 .i' + i).css('backgroundImage');
             var i2 =  $('.cnt01 .i' + (i + 1)).css('backgroundImage');
-            console.log(i1 + i2);
             $('.cnt01 .i' + i).css('backgroundImage', i2);
             $('.cnt01 .i' + (i + 1)).css('backgroundImage', i1);
         }
