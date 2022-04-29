@@ -19,12 +19,15 @@ $(function(){
     $('.ftr').load('./inc/footer.html', function(){
         var ftrBtn = $('footer nav li:nth-child(1)');
         var wd = $(window).width();
+        
         if(wd > 480 && wd <= 1024){
             ftrBtn.click(function(){
+                $('footer ul').eq(0).css('height', 'min(4rem, 160px)'); 
+                $('footer ul').eq(0).find('i').attr('class','xi-caret-up');
                 var th = $(this);
                 var i = th.parent().index();
                 if($(this).find('i').attr('class') == 'xi-caret-down'){
-                    $('footer ul').eq(i).css('height', 'min(9rem, 360px)'); 
+                    $('footer ul').eq(i).css('height', 'min(4rem, 160px)'); 
                     th.find('i').attr('class','xi-caret-up');
                 }else{
                     $('footer ul').eq(i).css('height', 'min(1rem, 40px)'); 

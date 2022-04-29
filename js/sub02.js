@@ -42,16 +42,5 @@ $(function(){
         classShow(cnt03Line, ind);
     });
     $('i.xi-heart').click(screenHeart);
-    //PC
-    if(wd > 1024){
-       
-        
-    //TABLET    
-    }else if(wd > 480 && wd <= 1024){
-
-     
-    //MOBILE
-    }else if(wd <= 480){
-    }
 
 });

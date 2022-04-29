@@ -31,7 +31,6 @@ $(function(){
                 btnWid = $(this).width();
                 barWid = $('.bnr02 .bars').width();
                 per = btnLeft / (barWid - btnWid) * 100;
-                console.log(per + '%');
                 $('.bnr02 .imgGroup').css('marginLeft', -per * 0.5 + '%');
             }
         });

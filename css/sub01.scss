@@ -86,7 +86,7 @@ html{
             .image, .bgimg, h1, .logo {
                 @include textremove;
             }
-            i, .btn, nav h4, li, h3, .image, h1, .btns div, span{
+            .btn, nav h4, .paging li, header h1, .btns div{
                 cursor: pointer;
             }  
         }
@@ -590,6 +590,7 @@ html{
                 }
                 .image{
                     height: #{'min(7rem, 280px)'};
+                    cursor: pointer;
                     @include tab{
                         height: #{'min(6rem, 240px)'};
                     }
@@ -997,7 +998,7 @@ html{
         padding-top: #{'min(1rem, 40px)'}; 
         padding-bottom: #{'min(0.5rem, 20px)'}; 
         @include tab{
-            height: #{'min(11rem, 440px)'};
+            height: #{'min(9rem, 360px)'};
             position: relative;
         }
         @include mob{

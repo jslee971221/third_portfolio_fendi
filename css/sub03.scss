@@ -671,7 +671,7 @@ html{
         padding-top: #{'min(1rem, 40px)'}; 
         padding-bottom: #{'min(0.5rem, 20px)'}; 
         @include tab{
-            height: #{'min(11rem, 440px)'};
+            height: #{'min(9rem, 360px)'};
             position: relative;
         }
         @include mob{

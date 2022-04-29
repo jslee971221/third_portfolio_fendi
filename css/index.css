@@ -25,7 +25,7 @@ html{
 body{
     font-size: 0.7vw;
 }
-.btn, li, i{
+.btn, i, .paging li{
     cursor: pointer;
 }
 nav h4{
@@ -571,7 +571,6 @@ footer nav{
     justify-content: space-around;
     text-align: center;
 }
-
 footer nav li{
     line-height: min(1rem, 40px);
     font-size: min(1.4em, 14px);
