@@ -85,7 +85,7 @@ html{
             .image, .bgImg, h1, .logo {
                 @include textremove;
             }
-            i, .btn, nav h4, li, h3, .image, h1, .btns div, span{
+            i, .btn, nav h4, h1, .btns div, span, .paging li{
                 cursor: pointer;
             }  
         }
@@ -293,7 +293,7 @@ html{
                     }
                     .artBtm{
                         @include flexset;
-                        margin-top: #{'min(1rem, 40px)'};
+                        margin-top: #{'min(1.75rem, 70px)'};
                         article{
                             width: calc(50% - 20px);
                             .image{
@@ -390,6 +390,7 @@ html{
                             background-image: url('../images/sub02/cnt02_#{$i}.jpg');
                         }
                     } 
+                    
                 }
                 .artView{
                     width: calc(100% / 12 * 4);
@@ -476,6 +477,7 @@ html{
                             }
                             .image{
                                 height: #{'min(6rem, 240px)'};
+                                cursor: pointer;
                                 @include tab{
                                     height: #{'min(4rem, 160px)'};
                                 }
@@ -511,6 +513,7 @@ html{
                                 }
                             }
                             .image{
+                                cursor: pointer;
                                 height: #{'min(4rem, 160px)'};
                                 background-position-y: #{'max(-2.5rem, -100px)'};
                                 @include tab{
@@ -585,6 +588,7 @@ html{
                         }
 
                         .image{
+                            cursor: pointer;
                             width: 50%;
                             height: #{'min(3rem, 120px)'};
                             background-position-y: #{'max(-1.5rem, -60px)'};
@@ -768,8 +772,8 @@ html{
                     height: #{'min(11rem, 440px)'};
                 }
                 @include mob{
-                    width: calc((100% / 4 * 3 - 20px)  + (100vw - 380px) / 2);
-                    min-width: calc((100% / 4 * 3 - 20px) + (100vw - 90vw) / 2);
+                    width: calc((100% / 4 * 2 - 20px)  + (100vw - 380px) / 2);
+                    min-width: calc((100% / 4 * 2 - 20px) + (100vw - 90vw) / 2);
                     margin-left: #{'min(calc((100vw - 380px) / -2), calc((100vw - 90vw) / -2))'};
                     height: #{'min(9rem, 360px)'};
                 }
@@ -948,24 +952,24 @@ html{
 }
 
 .heart{
-    width: 50%;
-    height: 50vw;
+    width: 25%;
+    height: 25vw;
     position: fixed;
     margin: auto;
     top: 0;
-    left: 0;
-    right: 0;
     bottom: 0;
+    right: 0;
+    left: 0;
     text-align: center;
     color: #000;
     opacity: 0;
     pointer-events: none;
     i{
         opacity: 0.8;
-        font-size: #{'min(50em, 500px)'};
-        line-height: 50vw;
+        font-size: #{'min(30em, 300px)'};
+        line-height: 25vw;
         @include mob{
-            font-size: #{'min(25em, 250px)'};
+            font-size: #{'min(150em, 150px)'};
             text-align: center;
         }
     }

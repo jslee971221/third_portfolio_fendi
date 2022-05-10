@@ -85,7 +85,7 @@ html{
             .image, .bgImg, h1, .logo {
                 @include textremove;
             }
-            i, .btn, nav h4, li, h3, .image, h1, .btns div, span{
+            i, .btn, nav h4, h1, .btns div, span{
                 cursor: pointer;
             }  
         }
@@ -540,6 +540,10 @@ html{
                 bottom: 0;
                 left: -10%;
                 margin: auto;
+                @include tab{
+                    width: 100%;
+                    left: -3px;
+                }
                 @include mob{
                     display: none;
                 }
