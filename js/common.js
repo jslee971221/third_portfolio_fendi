@@ -21,9 +21,9 @@ $(function(){
         var wd = $(window).width();
         
         if(wd > 480 && wd <= 1024){
+            $('footer ul').eq(0).css('height', 'min(4rem, 160px)'); 
+            $('footer ul').eq(0).find('i').attr('class','xi-caret-up');
             ftrBtn.click(function(){
-                $('footer ul').eq(0).css('height', 'min(4rem, 160px)'); 
-                $('footer ul').eq(0).find('i').attr('class','xi-caret-up');
                 var th = $(this);
                 var i = th.parent().index();
                 if($(this).find('i').attr('class') == 'xi-caret-down'){
